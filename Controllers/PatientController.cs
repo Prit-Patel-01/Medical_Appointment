@@ -1,12 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Medical_Appointment.Controllers
+namespace Doctor_Appointment_System.Controllers
 {
-    public class AdminController : Controller
+    public class PatientController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Dashboard() => View();
+        public IActionResult FindDoctor() => View();
+        public IActionResult BookAppointment() => View();
+        public IActionResult BookingConfirm() => View();
+        public IActionResult DoctorProfile() => View();
+        public IActionResult AppointmentHistory() => View();
+        public IActionResult Notifications() => View();
+        public IActionResult Payment() => View();
+        public IActionResult Profile() => View();
+
+        [HttpGet]
+        public IActionResult Register() => View();
+
+        [HttpPost]
+        public IActionResult Register(string name, string email, string password)
         {
-            return View();
+            return RedirectToAction("Login", "Auth");
         }
     }
 }
